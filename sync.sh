@@ -10,7 +10,8 @@ then
     echo "have will update" $DST_FOLDER
     cd $DST_FOLDER
     ls -al
-    git reset --hard
+    git fetch --all
+    git reset --hard origin/master
     git pull
 else 
     echo "not have will clone"
