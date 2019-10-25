@@ -22,17 +22,9 @@ fi
 cp -f default /etc/nginx/sites-available/default
 cp -f rules.v4 /etc/iptables/rules.v4
 
-
-service=nginx
-if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 ))
-then
-    echo "$service is running will reload!!!"
-    service $service reload
-else
-    echo "$service is not running will start"
-    /etc/init.d/$service start
-fi
-
-echo "done nginx reload"
+service nginx restart
+echo "done nginx restart"
 service netfilter-persistent reload
 echo "done netfilter reload"
+
+
