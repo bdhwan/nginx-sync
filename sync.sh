@@ -20,11 +20,11 @@ else
 fi
 
 cp -f default /etc/nginx/sites-available/default
-cp -f rules.v4 /etc/iptables/rules.v4
+# cp -f rules.v4 /etc/iptables/rules.v4
 
 service nginx restart
 echo "done nginx restart"
-service netfilter-persistent reload
-echo "done netfilter reload"
+# service netfilter-persistent reload
+# echo "done netfilter reload"
 
 
